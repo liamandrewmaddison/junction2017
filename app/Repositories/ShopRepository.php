@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-class ShopsRepository extends Repository
+class ShopRepository extends Repository
 {
     /**
      * Specify Model class name
@@ -11,6 +11,6 @@ class ShopsRepository extends Repository
      */
     function model()
     {
-        return 'App\Models\User';
+        return 'App\Models\Shop';
     }
 }

@@ -11,9 +11,9 @@ class Shop extends Model
      * Necessary variable for generalization of REST actions
      */
     public $key = 'id';
-    public $name = 'product';
+    public $name = 'cart';
 
-    protected $table = 'products';
+    protected $table = 'carts';
     protected $primaryKey = 'id';
 
     /**
@@ -22,10 +22,8 @@ class Shop extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'price',
-        'category',
-        'barcode',
-        'description',
+        'user_id',
+        'shop_id',
+        'items',
     ];
 }
