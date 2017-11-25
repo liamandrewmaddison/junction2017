@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use GuzzleHttp\Client;
+
 use App\Http\Controllers\Controller as Controller;
+use GuzzleHttp\Client;
 
 class OAuthController extends Controller
 {
