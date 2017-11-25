@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('barcode');
             $table->string('description');
             $table->float('price');
+            $table->string('shop_id');
             $table->timestamps();
         });
     }
