@@ -30,6 +30,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $fillable = [
         'name',
         'email',
+        'password',
         'stripe_id',
     ];
 
@@ -39,6 +40,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $visible = [
         'name',
         'email',
+        'stripe_id',
     ];
 
     /**

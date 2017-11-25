@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCartTable extends Migration
+class CreateCartsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,7 +17,6 @@ class CreateCartTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('shop_id')->unsigned();
-            $table->integer('transation_id')->unsigned();
             $table->integer('status')->unsigned();
             $table->json('items');
             $table->timestamps();
