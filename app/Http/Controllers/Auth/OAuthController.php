@@ -34,6 +34,6 @@ class OAuthController extends Controller
             'form_params' => $credentials,
         ]);
 
-        return json_decode((string) $response->getBody(), true);
+        return json_decode($response->getBody(), true);
     }
 }
