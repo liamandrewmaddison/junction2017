@@ -31,10 +31,16 @@ class OAuthController extends Controller
     {
         $http = new Client();
 
-        $response = $http->post(url('/oauth/token'), [
-            'form_params' => $credentials,
-        ]);
-
-        return json_decode($response->getBody(), true);
+        try {
+            $response = $http->post(url('/oauth/token'), [
+                'form_params' => $credentials,
+            ]);
+            return json_decode($response->getBody(), true);
+        } catch (GuzzleHttp\Exception\ClientException $e) {
+            return response()->json([
+                'response' => $e->getResponse(),
+                'result' =>  $response->getBody(),
+            ]);
+        }
     }
 }
