@@ -1,0 +1,258 @@
+Company:
+  hasMany: teams
+  hasMany: developerApps
+  fields:
+    company_id:
+      schema: increments
+      tags: fillable
+    company_parent_id:
+      schema: integer:false length:10
+      rules: numeric
+      tags: fillable
+    company_partner:
+      schema: tinyInteger:false length:4 index:'company_partner'
+      rules: numeric
+      tags: fillable
+    company_partner_date:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable date
+    plan_id:
+      schema: unsignedInteger:false length:10 index:'plan_id'
+      rules: numeric
+      tags: fillable
+    company_billing_date:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable date
+    company_billing_date_monthly:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable date
+    company_billing_plan_update:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable date
+    company_billing_cycle:
+      schema: enum:['monthly','annual','quaterly'] default.'monthly'
+      rules: required
+      tags: fillable
+    company_billing_balance:
+      schema: 'double:7,2'
+      rules: numeric
+      tags: fillable
+    company_billing_failed:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable
+    company_billing_overage:
+      schema: tinyInteger:false length:4
+      rules: numeric
+      tags: fillable
+    company_usage_cycle:
+      schema: enum:['monthly','annual'] default.'monthly'
+      tags: fillable
+    company_credit:
+      schema: unsignedInteger:false length:10 default.'5'
+      rules: numeric
+      tags: fillable
+    company_name:
+      schema: string index:'company_name'
+      rules: required
+      tags: fillable
+    company_email:
+      schema: string index:'company_email'
+      rules: required
+      tags: fillable
+    company_email_code:
+      schema: string:20
+      tags: fillable
+    company_account_email:
+      schema: string
+      rules: required
+      tags: fillable
+    company_vat:
+      schema: string:50
+      tags: fillable
+    company_paypal_email:
+      schema: string
+      tags: fillable
+    company_payout_limit:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable
+    company_address_line_1:
+      schema: string
+      rules: required
+      tags: fillable
+    company_address_line_2:
+      schema: string
+      tags: fillable
+    company_address_town:
+      schema: string
+      tags: fillable
+    company_address_city:
+      schema: string
+      tags: fillable
+    company_address_postcode:
+      schema: string:25
+      tags: fillable
+    country_id:
+      schema: unsignedInteger:false length:3
+      rules: numeric
+      tags: fillable
+    company_telephone:
+      schema: string:50
+      tags: fillable
+    company_api_key:
+      schema: string:32
+      tags: fillable
+    company_api_notify_url:
+      schema: string
+      tags: fillable
+    company_logo:
+      schema: string:32
+      tags: fillable
+    company_created:
+      schema: unsignedInteger:false length:10 index:'company_created'
+      rules: numeric
+      tags: fillable date
+    company_last_updated:
+      schema: unsignedInteger:false length:10
+      rules: numeric
+      tags: fillable date
+    company_last_login:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable date
+    company_login_count:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable
+    company_removed:
+      schema: unsignedInteger:false length:10
+      rules: numeric
+      tags: fillable date
+    company_upgraded:
+      schema: unsignedInteger:false length:11 index:'company_upgraded'
+      rules: numeric
+      tags: fillable date
+    company_cancelled:
+      schema: unsignedInteger:false length:11
+      rules: numeric
+      tags: fillable date
+    company_xero:
+      schema: string:50
+      tags: fillable
+    coupon_id:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable
+    plan_trial:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable
+    company_referral:
+      schema: string:5 nullable
+      tags: fillable
+    kashflow_id:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable
+    signature_more_info:
+      schema: integer:false length:11 default.1
+      rules: numeric
+      tags: fillable
+    company_pdf_attach:
+      schema: integer:false length:11 default.0
+      rules: numeric
+      tags: fillable
+    company_signature_type:
+      schema: integer:false length:11 default.1
+      rules: numeric
+      tags: fillable
+    company_email_notifications:
+      schema: tinyInteger:false length:4
+      rules: numeric
+      tags: fillable
+    company_staff_assigned:
+      schema: integer:false length:11 index:'company_staff_assigned'
+      rules: numeric
+      tags: fillable
+    company_tour_enable:
+      schema: tinyInteger:false length:4 default.1
+      rules: numeric
+      tags: fillable
+    company_api_suspended:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable
+    company_main_email_notifications:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable
+    company_signature_default:
+      schema: string:10 default.'drawn'
+      tags: fillable
+    company_consumer_regulations:
+      schema: integer:false length:11 default.0
+      rules: numeric
+      tags: fillable
+    company_remind_hours:
+      schema: integer:false length:11 default.0
+      rules: numeric
+      tags: fillable
+    company_notes:
+      schema: text
+      tags: fillable
+    company_signup_referral:
+      schema: string:200
+      tags: fillable
+    company_signup_source:
+      schema: string:100
+      tags: fillable
+    company_signup_medium:
+      schema: string:100
+      tags: fillable
+    company_signup_campaign:
+      schema: string:100
+      tags: fillable
+    company_signup_browser:
+      schema: text
+      tags: fillable
+    company_signature_format_typed:
+      schema: tinyInteger:false length:4 default.1
+      tags: fillable
+    company_signature_format_drawn:
+      schema: tinyInteger:false length:4 default.1
+      tags: fillable
+    company_signature_format_upload:
+      schema: tinyInteger:false length:4 default.1
+      tags: fillable
+    company_hide_email_pdf_audit:
+      schema: integer:false length:11 default.0
+      tags: fillable
+    company_branding_colour:
+      schema: string:7
+      tags: fillable
+    company_auto_reminder_default_hours:
+      schema: integer:false length:11 default.48
+      tags: fillable
+    company_auto_expire_default_hours:
+      schema: integer:false length:11 default.48
+      tags: fillable
+    company_questions_signing:
+      schema: integer:false length:11 default.1
+      tags: fillable
+    company_user_return_email:
+      schema: integer:false length:11 default.0
+      tags: fillable
+    company_10_day_review_date:
+      schema: integer:false length:11 default.0
+      tags: fillable
+    company_ip_whitelist:
+      schema: tinyInteger:false length:1 default.0
+      tags: fillable
+    company_new_signing_page:
+      schema: tinyInteger:false length:4 default.0
+      tags: fillable

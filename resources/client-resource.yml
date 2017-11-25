@@ -1,0 +1,39 @@
+Client:
+  hasMany: Envelopes
+  belongsTo: Teams
+  belongsTo: Company
+  fields:
+    client_id:
+      schema: increments
+      tags: fillable primaryKey
+    company_id:
+      schema: unsignedInteger:false length:10 default:0 index:'company_id'
+      rules: required numeric
+      tags: fillable
+    client_title:
+      schema: string:255 index:'client_title'
+      rules: required
+      tags: fillable
+    client_email:
+      schema: string:255 index:'client_email'
+      rules: required
+      tags: fillable
+    client_added:
+      schema: unsignedInteger:false length:10 default:0 index:'client_added'
+      rules: numeric
+      tags: fillable date
+    client_removed:
+      schema: unsignedInteger:false length:10 default:0 index:'client_removed'
+      rules: numeric
+      tags: fillable date
+    client_kashflow:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable
+    client_capsule:
+      schema: integer:false length:11
+      rules: numeric
+      tags: fillable
+    client_closeio:
+      schema: string:255
+      tags: fillable
