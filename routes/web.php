@@ -48,6 +48,7 @@ $router->group(['prefix' => 'shops', 'middleware' => 'auth'], function () use ($
 $router->group(['prefix' => 'products', 'middleware' => 'auth'], function () use ($router) {
     $router->get('/', 'ProductsController@all');
     $router->get('/{id}', 'ProductsController@getById');
+    $router->post('/get-from-barcodes', 'ProductsController@getProductFromBarCodes');
     $router->put('/update/{id}', 'ProductsController@update');
     $router->post('/create', 'ProductsController@create');
     $router->delete('/delete/{id}', 'ProductsController@delete');

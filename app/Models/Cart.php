@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Shop extends Model
+class Cart extends Model
 {
 
     /**
@@ -25,5 +25,9 @@ class Shop extends Model
         'user_id',
         'shop_id',
         'items',
+    ];
+
+    protected $casts = [
+        'items' => 'array',
     ];
 }

@@ -48,10 +48,13 @@ class LoginProxy extends Controller
         $user = $this->users->findBy('email', $email);
         if (!is_null($user)) {
             $scopes = '*';
-            return $this->proxyRequest('password', [
+            $token = $this->proxyRequest('password', [
                 'username' => $email,
                 'password' => $password,
                 'scope' => $scopes,
+            ]);
+            return response()->json([
+                'data' => $token,
             ]);
         }
     }

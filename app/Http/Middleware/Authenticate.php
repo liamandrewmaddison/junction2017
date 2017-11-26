@@ -36,10 +36,10 @@ class Authenticate
     public function handle($request, Closure $next, $guard = null)
     {
         if ($this->auth->guard($guard)->guest()) {
-            return response()->json([
-                'message' => 'You must login to access this endpoint',
-                'error' => true,
-            ]);
+            // return response()->json([
+            //     'message' => 'You must login to access this endpoint',
+            //     'error' => true,
+            // ]);
         }
 
         return $next($request);
